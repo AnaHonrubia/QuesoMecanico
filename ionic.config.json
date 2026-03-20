@@ -1,0 +1,7 @@
+{
+  "name": "QuesoMecanico",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

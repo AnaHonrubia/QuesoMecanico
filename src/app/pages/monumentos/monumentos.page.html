@@ -1,0 +1,188 @@
+<ion-header>
+  <ion-toolbar> 
+    <ion-buttons slot="start">
+      <ion-menu-button color="danger"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Monumentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="monumentos">
+    
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/calleancha.jpg" class="imagen-monumento" (click)="mostrarInfoAncha()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'ancha')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['ancha'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['ancha'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+        <h3>Centro Comercial calle Ancha</h3> 
+        <p>Toca la imagen para ver más información.</p>
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.es/maps/place/Centro+Comercial+Calle+Ancha+de+Albacete,+S.L./@38.9925891,-1.8569348,20.31z/data=!4m6!3m5!1s0xd665fc749bf736b:0x474f6298a3895c8!8m2!3d38.9926029!4d-1.8566139!16s%2Fg%2F11b6d6n97j?hl=es&entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/altzano.jpg" class="imagen-monumento" (click)="mostrarInfoAltozano()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'altozano')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['altozano'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['altozano'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+         <h3>Plaza del Altozano</h3>
+         <p>Toca la imagen para ver más información.</p>
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.es/maps/place/Pl.+Altozano,+02001+Albacete/@38.9950688,-1.8567164,17z/data=!3m1!4b1!4m6!3m5!1s0xd665fbf722e0c63:0x158adf16b8e41ed5!8m2!3d38.9950647!4d-1.8541415!16s%2Fg%2F1s056pz87?hl=es&entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/pasajeLodares.jpg" class="imagen-monumento" (click)="mostrarInfoLodares()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'lodares')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['lodares'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['lodares'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+         <h3>Pasaje Lodares</h3>
+         <p>Toca la imagen para ver más información.</p>
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.es/maps/place/Pasaje+de+Lodares/@38.9932486,-1.8583749,16z/data=!3m1!4b1!4m6!3m5!1s0xd665fc78a2fffff:0xdc9a426552587da!8m2!3d38.9932445!4d-1.8558!16s%2Fm%2F0h3n7v0?hl=es&entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/abelardo.jpg" class="imagen-monumento" (click)="mostrarInfoAbelardo()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'abelardo')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['abelardo'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['abelardo'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+         <h3>Parque Abelardo Sánchez</h3>
+         <p>Toca la imagen para ver más información.</p>
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.com/maps/place/Parque+Abelardo+S%C3%A1nchez/@38.9875938,-1.8594474,568m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd665f83fac39e27:0xadede9a18256b7ad!8m2!3d38.9875938!4d-1.8568725!16s%2Fg%2F1pzpdfxmh?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/museoCuchilleria.jpg" class="imagen-monumento" (click)="mostrarInfoMuseo()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'museo')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['museo'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['museo'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+         <h3>Museo de la Cuchilleria</h3>
+         <p>Toca la imagen para ver más información.</p>
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.com/maps/place/Museo+Municipal+de+la+Cuchiller%C3%ADa/@38.996205,-1.8590929,1135m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd665fb8d4272b0d:0x58b3bf6c15cfa86d!8m2!3d38.996205!4d-1.856518!16s%2Fg%2F11dylblts?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/puertaHierros.jpg" class="imagen-monumento" (click)="mostrarInfoHierros()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'hierros')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['hierros'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['hierros'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+         <h3>Puerta de Hierros</h3>
+         <p>Toca la imagen para ver más información.</p>
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.com/maps/place/Puerta+de+Hierros+de+Albacete/@38.9969773,-1.8709293,1109m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd665fb4586b20ad:0xa366278014bacf4e!8m2!3d38.9969773!4d-1.8683544!16s%2Fg%2F1q5h6s5yw?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/fontecha.jpg" class="imagen-monumento" (click)="mostrarInfoFontecha()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'fontecha')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['fontecha'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['fontecha'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+         <h3>Chalet Fontecha</h3>
+         <p>Toca la imagen para ver más información.</p>
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.com/maps/place/Refugios+antia%C3%A9reos+del+Altozano/@38.9946253,-1.8570188,554m/data=!3m3!1e3!4b1!5s0xd665fbf721e387f:0xfc9cecb4f0b44090!4m6!3m5!1s0xd665f616b3862b5:0x30c0758d739f101e!8m2!3d38.9946253!4d-1.8544439!16s%2Fg%2F11b6z0g9lk?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/refugioAntiAerio.jpg" class="imagen-monumento" (click)="mostrarInfoRefugio()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'refugio')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['refugio'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['refugio'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+         <h3>Refugio Anti Aéreo</h3>
+         <p>Toca la imagen para ver más información.</p>
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.com/maps/place/Refugios+antia%C3%A9reos+del+Altozano/@38.9946253,-1.8570188,554m/data=!3m3!1e3!4b1!5s0xd665fbf721e387f:0xfc9cecb4f0b44090!4m6!3m5!1s0xd665f616b3862b5:0x30c0758d739f101e!8m2!3d38.9946253!4d-1.8544439!16s%2Fg%2F11b6z0g9lk?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <div class="contenedor-imagen">
+        <img src="assets/img/teatroCirco.jpg" class="imagen-monumento" (click)="mostrarInfoCirco()" style="cursor: pointer;" />
+        <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'circo')">
+          <ion-icon slot="icon-only" [name]="estadosMeGusta['circo'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['circo'] ? 'danger' : 'light'"></ion-icon>
+        </ion-button>
+      </div>
+      <ion-card-content>
+         <h3>Teatro Circo</h3>
+         <p>Toca la imagen para ver más información.</p>
+
+        <ion-button expand="block" fill="outline" color="transparent" href="https://www.google.com/maps/place/Teatro+Circo/@38.9958334,-1.8566267,1109m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd665fbf055cf459:0x9f18313a0240d72c!8m2!3d38.9958334!4d-1.8540518!16s%2Fg%2F11h1st3vk?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+  <ion-card>
+    <div class="contenedor-imagen">
+      <img src="assets/img/catedralFuera.jpg" class="imagen-monumento" (click)="mostrarInfoCatedral()" style="cursor: pointer;" />
+      <ion-button class="boton-corazon" fill="clear" (click)="toggleCorazon($event, 'catedral')">
+        <ion-icon slot="icon-only" [name]="estadosMeGusta['catedral'] ? 'heart' : 'heart-outline'" [color]="estadosMeGusta['catedral'] ? 'danger' : 'light'"></ion-icon>
+      </ion-button>
+    </div>
+    <ion-card-content>
+      <h3>Catedral</h3>
+      <p>Toca la imagen para ver más información.</p>
+      <ion-button expand="block" fill="outline" color="secondary" href="https://www.google.com/maps/search/?api=1&query=Catedral+San+Juan+Bautista+Albacete" target="_blank" style="margin-top: 10px;">
+        <ion-icon slot="start" name="map"></ion-icon>
+          Ver Ubicación
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  </div>
+
+</ion-content>

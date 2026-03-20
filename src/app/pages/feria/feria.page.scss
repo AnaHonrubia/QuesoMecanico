@@ -1,0 +1,160 @@
+/* --- 1. EL FONDO DE LA PANTALLA --- */
+.fondo-gris {
+  /* Ponemos un gris casi blanco para que las fotos resalten más */
+  --background: #fafafa;
+}
+
+/* --- 2. LA BARRA DE "STORIES" (DÍAS DE FERIA) --- */
+.stories-container {
+  display: flex;
+  /* Esto permite que, si hay muchos días, podamos moverlos con el dedo hacia el lado */
+  overflow-x: auto; 
+  padding: 10px 0;
+  background: white;
+  border-bottom: 1px solid #efefef;
+  /* Escondemos la barrita gris de abajo para que quede más limpio */
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  .story-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+    min-width: 70px;
+
+    .circulo-interno {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%; /* ¡Círculo perfecto! */
+      padding: 3px; 
+      border: 2px solid #ddd; /* Borde gris cuando nadie lo ha pulsado */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      span {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #333;
+      }
+    }
+
+    .nombre-dia {
+      font-size: 0.8rem;
+      margin-top: 5px;
+      color: #666;
+    }
+
+    /* --- CUANDO PINCHAMOS UN DÍA (EFECTO INSTAGRAM) --- */
+    &.activo {
+      .circulo-interno {
+        /* ¡MAGIA! Ponemos un borde con los colores del arcoíris */
+        border-color: transparent;
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        z-index: 1;
+        position: relative;
+        
+        span {
+          /* Dejamos el centro blanco para que el número del día se lea bien */
+          background: white; 
+          border: 2px solid white; 
+        }
+      }
+      .nombre-dia {
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+}
+
+/* --- 3. EL MURO DE FOTOS (FEED) --- */
+.post-card {
+  margin: 0;
+  margin-bottom: 15px;
+  border-radius: 0; /* Sin esquinas redondas, como en Instagram móvil */
+  box-shadow: none; 
+  border-bottom: 1px solid #efefef;
+
+  /* La parte de arriba donde sale tu nombre y avatar */
+  .post-header {
+    --min-height: 50px;
+    font-size: 0.9rem;
+    h3 {
+      font-weight: 600; /* Letra un poco más gordita */
+      font-size: 0.95rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* El marco de la foto */
+  .imagen-wrapper {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 400px;
+      /* 'cover' corta la foto para que siempre encaje en el cuadrado sin deformarse */
+      object-fit: cover; 
+      display: block;
+    }
+  }
+
+  /* Los botones de dar Like, Comentar y Compartir */
+  .acciones-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+    ion-button {
+      --padding-start: 8px;
+      --padding-end: 8px;
+    }
+  }
+
+  /* El texto de debajo de la foto */
+  .post-content {
+    padding-top: 0;
+    
+    .likes-count {
+      margin-bottom: 5px; /* Aquí se ven cuántos amigos le han dado al corazón */
+    }
+    
+    .ver-comentarios {
+      color: #888;
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+
+    .fecha-post {
+      font-size: 0.7rem;
+      color: #888;
+      margin-top: 5px; /* Para saber hace cuánto se subió la foto */
+    }
+  }
+
+  /* --- SECCIÓN DE COMENTARIOS --- */
+  .comentarios-section {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #eee; /* Una rayita muy fina para separar */
+  
+    p {
+      font-size: 0.9rem;
+      margin: 4px 0;
+    }
+  }
+}

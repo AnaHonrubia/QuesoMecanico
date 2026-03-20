@@ -1,0 +1,68 @@
+<ion-app>
+  <ion-menu contentId="main-content" menuId="main-menu">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+      <ion-list>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item routerLink="/ayuda" routerLinkActive="selected" lines="none" detail="false">
+            <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+            <ion-label>Ayuda y Tutorial</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        <ion-menu-toggle auto-hide="false">
+          <ion-item routerLink="/home" routerLinkActive="selected" lines="none" detail="false">
+            <ion-icon slot="start" name="home-outline"></ion-icon>
+            <ion-label>Inicio</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item routerLink="/monumentos" routerLinkActive="selected" lines="none" detail="false">
+            <ion-icon slot="start" name="business-outline"></ion-icon>
+            <ion-label>Monumentos</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item routerLink="/gastronomia" routerLinkActive="selected" lines="none" detail="false">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon>
+            <ion-label>Gastronomía</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false" *ngIf="mostrarFavoritos">
+          <ion-item routerLink="/favoritos" routerLinkActive="selected" lines="none" detail="false">
+            <ion-icon slot="start" name="heart" color="danger"></ion-icon>
+            <ion-label color="danger">Mis Favoritos</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="false">
+          <ion-item routerLink="/feria" routerLinkActive="selected" lines="none" detail="false">
+            <ion-icon slot="start" name="ticket-outline"></ion-icon>
+            <ion-label>Blog Feria</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+      </ion-list>
+    </ion-content>
+
+    <ion-footer class="ion-no-border"> <!-- Deja un poco de margen abajo y no se pegue al borde de la pantalla del movil -->
+      <ion-item lines="none" style="margin-bottom: 10px;">
+        <ion-icon slot="start" name="moon-outline"></ion-icon>
+        <ion-label>Modo Oscuro</ion-label>
+        <ion-toggle slot="end" [(ngModel)]="modoOscuro" (ionChange)="cambiarTema($event)"></ion-toggle>
+      </ion-item>
+    </ion-footer>
+
+  </ion-menu>
+  
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/gastronomia"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mis Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <div class="background-image"></div>
+
+  <ion-list lines="none" *ngIf="misFavoritos && misFavoritos.length > 0; else vacio">
+    
+    <ion-item *ngFor="let fav of misFavoritos" class="receta-item" (click)="verReceta(fav)">
+      <ion-thumbnail slot="start">
+        <img [src]="fav.imagen" alt="Foto plato" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ fav.nombre }}</h2>
+        <p>Toca para ver detalles</p>
+      </ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end" color="medium"></ion-icon>
+    </ion-item>
+
+  </ion-list>
+
+  <ng-template #vacio>
+    <div class="vacio-container">
+      <ion-icon name="heart-dislike-outline"></ion-icon>
+      <h3>¡Tu mesa está vacía!</h3>
+      <p>Aún no has guardado platos favoritos.</p>
+      <br>
+      <ion-button fill="solid" color="light" routerLink="/gastronomia">
+        Volver a buscar comida
+      </ion-button>
+    </div>
+  </ng-template>
+
+</ion-content>

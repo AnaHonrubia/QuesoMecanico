@@ -1,0 +1,53 @@
+/* --- LA IMAGEN DE FONDO --- */
+img {
+  /* Imagina que la imagen es un póster pegado a la pared que no se mueve */
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  /* Con esto le decimos: "¡Estírate y ocupa toda la pantalla!" */
+  width: 100%;
+  height: 100%;
+  
+  /* El z-index: 0 es para que se quede al fondo del todo */
+  z-index: 0;
+  
+  /* Con 0.8 la hacemos un pelín transparente, para que no brille tanto */
+  opacity: 0.8;
+  
+  /* El 'cover' es como un sastre: recorta la foto para que encaje perfecto sin deformarse */
+  object-fit: cover; 
+}
+
+/* --- EL MENÚ LATERAL --- */
+ion-menu {
+  /* Aquí decidimos qué tan gordo es el menú que sale por el lado */
+  --width: 280px; 
+}
+
+/* --- ITEMS DEL MENÚ --- */
+ion-item {
+  /* Queremos que sean transparentes para ver la foto de fondo a través de ellos */
+  --background: transparent;
+  
+  /* Separamos un poquito los botones para que no estén pegados */
+  margin-bottom: 5px;
+  
+  /* Redondeamos las esquinas para que no pinchen, ¡como piezas de LEGO! */
+  border-radius: 5px;
+  
+  /* Esto pone la manita cuando pasamos el ratón, avisando que se puede hacer clic */
+  cursor: pointer;
+
+  /* El iconito que acompaña al texto lo empujamos un poco a la derecha */
+  ion-icon {
+    margin-right: 15px;
+  }
+}
+
+/* --- EL EFECTO MÁGICO AL PASAR EL RATÓN --- */
+ion-item:hover {
+  /* Cuando pongas el dedo o el ratón encima, el botón se pintará de un rojo muy clarito */
+  /* ¡Es como si el botón se encendiera para decirte "estoy aquí"! */
+  --background: rgba(var(--ion-color-danger-rgb), 0.1); 
+}

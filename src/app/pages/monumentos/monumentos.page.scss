@@ -1,0 +1,85 @@
+/* --- LA FILA DE LOS BOTONES --- */
+.botones {
+  /* Hacemos que la caja ocupe todo el ancho y que los botones se queden en el centro */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Dejamos un hueco de 12px entre ellos para que no se choquen */
+  gap: 12px;
+  /* Con z-index: 10 nos aseguramos de que los botones siempre estén "encima" de todo */
+  z-index: 10;
+}
+
+/* --- EL FONDO DE LA PANTALLA --- */
+ion-content {
+  /* 1. Ponemos el póster de la catedral de fondo. 
+     'cover' hace que la foto se estire para tapar toda la pared sin deformarse. */
+  background: url('/assets/img/catedral.jpg') no-repeat center center / cover;
+
+  /* 2. Le ponemos unas gafas de sol al fondo (oscuridad al 30%). 
+     Así las letras y tarjetas blancas brillan mucho más y se leen mejor. */
+  &::part(background) {
+    background: rgba(0, 0, 0, 0.3); 
+  }
+}
+
+/* --- EL PASILLO DE LOS MONUMENTOS --- */
+.monumentos {
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+  /* Separamos las fotos 50px una de otra */
+  gap: 50px;
+  /* Si la pantalla es pequeña y no caben todos en fila, los de la derecha bajan solitos abajo */
+  flex-wrap: wrap; 
+  /* Dejamos un margen de seguridad de 50px alrededor de todo el grupo */
+  padding: 50px 50px;
+}
+
+/* --- LAS TARJETAS (MARCOS DE FOTOS) --- */
+ion-card {
+  /* Hacemos la tarjeta invisible para usar el efecto de cristal empañado (blur) */
+  background: transparent;
+  backdrop-filter: blur(5px);
+  /* Cada tarjeta medirá exactamente 220px de ancho */
+  width: 220px; 
+  
+  /* Redondeamos las esquinas como los bordes de una tablet */
+  border-radius: 10px;
+  /* Le ponemos una sombra oscura por debajo para que parezca que la tarjeta flota */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  /* Le dibujamos un borde blanco muy finito, como el marco de un cuadro moderno */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0; 
+}
+
+/* --- LA FOTO DEL MONUMENTO --- */
+.imagen-monumento {
+  width: 100%; 
+  height: 200px; 
+  /* 'object-fit: cover' es clave: recorta la foto para que todas las tarjetas midan lo mismo */
+  object-fit: cover; 
+  display: block;
+  /* Ponemos una rayita casi invisible abajo de la foto para separarla del texto */
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+/* --- EL TRUCO PARA EL CORAZÓN --- */
+.contenedor-imagen {
+  /* Esto le dice al corazón: "Tú no te salgas de esta foto" */
+  position: relative; 
+}
+
+/* EL BOTÓN DEL CORAZÓN (PEGATINA) */
+.boton-corazon {
+  /* 'absolute' hace que el corazón flote libremente sobre la foto */
+  position: absolute; 
+  /* Lo pegamos a la esquina de arriba (top) y a la derecha (right) */
+  top: 5px;
+  right: 5px;
+  /* z-index: 10 para que el corazón nunca se quede "debajo" de la foto */
+  z-index: 10;
+  /* Quitamos los rellenos de los lados para que el corazón no se vea estirado */
+  --padding-start: 0;
+  --padding-end: 0;
+}

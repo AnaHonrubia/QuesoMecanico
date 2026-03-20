@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ayuda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="video-container ion-padding">
+    <h2 class="ion-text-center">Descubre la Ruta del Queso</h2>
+    
+    <video controls poster="assets/icon/icon.png" width="100%" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+      <source src="assets/video/tutorial.mp4" type="video/mp4">
+      Tu navegador no soporta vídeos.
+    </video>
+
+    <p class="ion-text-center ion-text-muted">
+      Dale al play para ver cómo sacar el máximo partido a nuestra app El Queso Mecanico.
+    </p>
+  </div>
+
+  <ion-list lines="none" class="ion-padding-top">
+    <ion-list-header>
+      <ion-label>Preguntas Frecuentes</ion-label>
+    </ion-list-header>
+
+    <ion-accordion-group>
+      
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>¿Cómo subo una foto al Blog?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          Ve a la sección "Blog Feria", pulsa el botón (+) azul y elige si quieres hacer una foto nueva o subirla desde tu galería. ¡No olvides poner tu nombre!
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>¿Cómo funciona la Gastronomía?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          Desliza las tarjetas a la derecha si te gusta el plato (Like) o a la izquierda si no. Los que te gusten se guardarán en tus favoritos.
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="third">
+        <ion-item slot="header" color="light">
+          <ion-label>¿Cómo activo el Modo Oscuro?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          Abre el menú lateral deslizando desde la izquierda y baja hasta el final. Allí encontrarás el interruptor para apagar las luces. 🌙
+        </div>
+      </ion-accordion>
+
+    </ion-accordion-group>
+  </ion-list>
+
+</ion-content>

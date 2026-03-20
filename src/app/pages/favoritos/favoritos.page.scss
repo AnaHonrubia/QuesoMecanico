@@ -1,0 +1,92 @@
+/* --- 1. EL CRISTAL DE LA VENTANA --- */
+ion-content {
+  /* Hacemos que el fondo sea invisible, como un cristal limpio, para ver el póster que hay detrás */
+  --background: transparent;
+}
+
+/* --- 2. EL PÓSTER MÁGICO DE FONDO --- */
+.background-image {
+  /* 'fixed' hace que la foto se quede pegada a la pantalla y no se mueva al bajar con el dedo */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Con z-index: -1 la mandamos al fondo del todo para que no tape las letras */
+  z-index: -1;
+  
+  /* Ponemos la foto del Atascaburras y hacemos que ocupe todo el espacio sin estirarse para que se pueda ver bien */
+  background-image: url('../../../assets/img/atascaburras.jpg'); 
+  background-size: cover;
+  background-position: center;
+  
+  /* --- EFECTOS ESPECIALES --- */
+  /* blur: empaña la foto (como cuando se empañan las gafas) para que las letras se lean mejor */
+  /* brightness: baja la luz de la foto, como si apagaras la lámpara al 40% */
+  filter: blur(6px) brightness(0.4); 
+  
+  /* Al empañar la foto, los bordes quedan raros. Con 'scale' hacemos un pelín de zoom para esconderlos */
+  transform: scale(1.1);
+}
+
+/* --- 3. LAS TARJETAS DE LOS PLATOS --- */
+.receta-item {
+  /* El fondo es blanco casi del todo, pero deja pasar un poquito de luz del fondo (0.9) */
+  --background: rgba(255, 255, 255, 0.9);
+  
+  /* Dejamos un hueco entre tarjeta y tarjeta y les redondeamos las esquinas */
+  margin-bottom: 12px;
+  border-radius: 15px;
+  
+  /* Le ponemos una sombra suave para que parezca que la tarjeta flota sobre el fondo */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  
+  /* La fotito pequeña del plato (miniatura) */
+  ion-thumbnail {
+    --border-radius: 10px; /* Bordes suaves */
+    width: 60px;
+    height: 60px;
+    
+    img {
+      object-fit: cover; /* Para que la comida siempre salga bien centrada en el cuadrito */
+    }
+  }
+  
+  /* El nombre del plato en negrita y color oscuro para que destaque */
+  h2 { 
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* El texto de la descripción un poco más gris y pequeño */
+  p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+}
+
+/* --- 4. CUANDO EL BAÚL ESTÁ VACÍO --- */
+.vacio-container {
+  /* Usamos Flexbox, que es como un imán que pone todo justo en el centro de la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  height: 60vh; /* Ocupa un buen trozo de la pantalla */
+  text-align: center;
+  color: white; /* Letras blancas para que brillen sobre el fondo oscuro */
+  
+  /* El icono de "no hay nada" lo hacemos gigante para que se vea bien */
+  ion-icon { 
+    font-size: 80px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}

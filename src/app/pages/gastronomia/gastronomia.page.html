@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar> 
+    <ion-buttons slot="start">
+      <ion-menu-button color="danger"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Gastronomía Manchega</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-content class="ion-padding">
+
+  <div class="background-image"></div>
+
+  <div class="swipe-container">
+    <swiper-container #swiper [loop]="false" slides-per-view="1" [centeredSlides]="true">
+      <swiper-slide *ngFor="let plato of platos">
+        <ion-card class="food-card">
+          <img [src]="plato.imagen" />
+          <ion-card-header>
+            <ion-card-title>{{ plato.nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ plato.descripcion }}
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
+  <div class="action-buttons">
+    <ion-fab-button color="light" (click)="descartar()">
+      <ion-icon name="close" color="danger"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-button color="danger" (click)="meGusta()">
+      <ion-icon name="heart"></ion-icon>
+    </ion-fab-button>
+  </div>
+
+  <ion-button expand="block" color="secondary" routerLink="/favoritos" class="ion-margin-top">
+    Ir a mis favoritos
+  </ion-button>
+
+</ion-content>

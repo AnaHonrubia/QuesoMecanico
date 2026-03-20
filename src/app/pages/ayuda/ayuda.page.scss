@@ -1,0 +1,38 @@
+/* --- LA CAJA DEL CINE  --- */
+.video-container {
+  /* Con el "auto" a los lados, la caja se queda justo en el centro, como el ombligo */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Le decimos: "No crezcas más de 300px", para que no se haga gigante y feo */
+  max-width: 300px;
+
+  /* Todo lo que escribamos dentro (títulos) se queda centradito y ordenado */
+  text-align: center;
+
+  /* --- EL VÍDEO (LA PELÍCULA) --- */
+  video {
+    /* El vídeo se estira hasta tocar las paredes de su caja (el 100%) */
+    width: 100%;
+    
+    /* Con "auto" en la altura, el vídeo no se ve ni estirado ni aplastado */
+    height: auto;
+    
+    /* Le dejamos un poco de aire arriba y abajo para que no esté agobiado */
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    /* ¡Esquinas redonditas para que no pinchen! Como una tablet moderna */
+    border-radius: 15px;
+    
+    /* Le ponemos una sombra oscura por debajo para que parezca que flota en la pantalla */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* --- EL TÍTULO (EL NOMBRE DE LA PELI) --- */
+h2 {
+  /* Le damos un empujoncito arriba y abajo para que se separe un poco del borde */
+  margin-top: 10px;
+  margin-bottom: 5px;
+}

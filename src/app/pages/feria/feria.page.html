@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Blog Feria</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarInfoFeria()">
+        <ion-icon slot="icon-only" name="paper-plane-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo-gris">
+
+  <div class="stories-container">
+    <div 
+      class="story-circle" 
+      *ngFor="let dia of diasFeria" 
+      (click)="seleccionarDia(dia.dia)"
+      [class.activo]="diaSeleccionado === dia.dia">
+      
+      <div class="circulo-interno">
+        <span>{{ dia.dia }}</span>
+      </div>
+      <span class="nombre-dia">{{ dia.nombre }}</span>
+    </div>
+  </div>
+
+  <div class="feed-container">
+    
+    <div *ngIf="publicacionesVisibles.length === 0" class="ion-text-center ion-padding" style="margin-top: 50px; color: #888;">
+      <ion-icon name="images-outline" style="font-size: 4rem;"></ion-icon>
+      <h3>Sin publicaciones el día {{ diaSeleccionado }}</h3>
+      <p>¡Sé el primero en subir algo!</p>
+    </div>
+
+    <ion-card class="post-card" *ngFor="let post of publicacionesVisibles">
+      
+      <ion-item lines="none" class="post-header">
+        <ion-avatar slot="start">
+          <img [src]="post.avatar" />
+        </ion-avatar>
+        <ion-label>
+          <h3>{{ post.usuario }}</h3>
+          <p>{{ post.ubicacion }}</p>
+        </ion-label>
+        <ion-icon name="ellipsis-horizontal" slot="end"></ion-icon>
+      </ion-item>
+
+      <div class="imagen-wrapper" (click)="darMeGusta(post)">
+        <img [src]="post.imagen" />
+      </div>
+
+      <div class="acciones-row">
+        <div class="izquierda">
+          <ion-button fill="clear" (click)="darMeGusta(post)">
+            <ion-icon slot="icon-only" [name]="post.meGusta ? 'heart' : 'heart-outline'" [color]="post.meGusta ? 'danger' : 'dark'"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" color="dark" (click)="comentarPost(post)">
+            <ion-icon slot="icon-only" name="chatbubble-outline"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" color="dark" (click)="mostrarInfoFeria()">
+            <ion-icon slot="icon-only" name="paper-plane-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+      
+
+      <ion-card-content class="post-content">
+        <p class="likes-count"><strong>{{ post.likes }} Me gusta</strong></p>
+        <p>
+          <strong>{{ post.usuario }}</strong> {{ post.descripcion }}
+        </p>
+        <p class="fecha-post">DÍA {{ post.dia }} DE FERIA</p>
+        <div class="comentarios-section" *ngIf="post.comentarios && post.comentarios.length > 0">
+          <p *ngFor="let comment of post.comentarios">
+            <strong>{{ comment.usuario }}</strong> {{ comment.texto }}
+          </p>
+        </div>
+        </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary" (click)="nuevoPost()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

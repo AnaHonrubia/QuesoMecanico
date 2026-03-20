@@ -1,0 +1,9 @@
+
+// Esto permite forzar el modo oscuro mediante una clase
+body.dark {
+  --ion-color-primary: #428cff;
+  --ion-background-color: #000000;
+  --ion-text-color: #ffffff;
+  
+  --ion-item-color: #ffffff;
+}
